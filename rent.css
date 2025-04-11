@@ -1,0 +1,120 @@
+﻿/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff0000/*#007bff*/;
+    color: white;
+    padding: 15px;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Rental Listings */
+.rent-container {
+    background: white;
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.property-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.property {
+    background: #eef5ff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+    .property img {
+        width: 100%;
+        height: 150px;
+        border-radius: 5px;
+    }
+
+.inquiry-btn {
+    background-color: #ff0000/*#007bff*/;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+    .inquiry-btn:hover {
+        background-color: #0056b3;
+    }
+
+/* Navigation Buttons */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.nav-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.left {
+    background-color: #28a745;
+    color: white;
+}
+
+.right {
+    background-color: #ff5733;
+    color: white;
+}
+
+.nav-btn:hover {
+    opacity: 0.8;
+}
+
+.map-container {
+    text-align: center;
+    margin-top: 40px; /* Adds spacing from previous elements */
+}
+
+.map {
+    display: flex;
+    justify-content: left; /* Centers the map */
+    align-items: center;
+    width: 100%;
+    max-width: 800px; /* Prevents the map from stretching too much */
+    margin: 0 auto; /* Centers it properly */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+    .map iframe {
+        width: 100%;
+        height: 350px; /* Increased for better visibility */
+        border-radius: 10px;
+    }

@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Listings</title>
+    <link rel="stylesheet" href="RE.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="title">Real Estate Living</h1>
+
+        <!-- Search Bar -->
+        <input type="text" id="searchBar" placeholder="Search by location..." onkeyup="filterProperties()">
+
+        <!-- Property Listings -->
+        <div class="property-list" id="propertyList">
+            <div class="property">
+                <h2>Buy your House</h2>
+                <img src="C:\Users\sampa\Desktop\real estate.jpg" .png" alt="Buy house" />
+                <p class="location">Downtown, Montreal</p>
+                <button onclick="window.location.href='buy.html'">Buy</button>
+            </div>
+            <div class="property">
+                <h2>Sell your House</h2>
+                <img src="C:\Users\sampa\Desktop\Sell.jpg" .png" alt="Sell House" />
+                <p class="location">Old Port, Montreal</p>
+                <button onclick="window.location.href='sell.html'">Sell</button>
+            </div>
+            <div class="property">
+                <h2>Rent a House</h2>
+                <img src="C:\Users\sampa\Desktop\Rent.jpg" .png" alt="Rent House" />
+                <p class="location">Griffintown, Montreal</p>
+                <button onclick="window.location.href='rent.html'">Rent</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

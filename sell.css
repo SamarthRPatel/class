@@ -1,0 +1,121 @@
+﻿/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Sell Form */
+.sell-container {
+    background: white;
+    width: 50%;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    text-align: left;
+    margin: 10px 0 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.sell-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+    .sell-btn:hover {
+        background-color: #0056b3;
+    }
+
+/* Navigation Buttons */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.nav-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.left {
+    background-color: #28a745;
+    color: white;
+}
+
+.centre {
+    background-color: #ff0000;
+    color: white;
+}
+
+.right {
+    background-color: #28a745;
+    color: white;
+}
+
+.nav-btn:hover {
+    opacity: 0.8;
+}
+
+
+
+.rejected-section {
+    margin-top: 40px;
+    background-color: #fff0f0;
+    padding: 20px;
+    border: 1px solid #f5c2c2;
+    border-radius: 10px;
+}
+
+    .rejected-section h2 {
+        color: red;
+    }
+
+.property {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: white;
+}

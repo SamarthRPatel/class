@@ -1,0 +1,85 @@
+﻿body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+#pending-listings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.property {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+    .property:hover {
+        transform: translateY(-5px);
+    }
+
+    .property h3 {
+        margin: 0 0 10px 0;
+        color: #34495e;
+    }
+
+    .property p {
+        margin: 5px 0;
+        color: #555;
+        font-size: 14px;
+    }
+
+    .property img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin: 10px 0;
+    }
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+    .actions button {
+        flex: 1;
+        padding: 8px 12px;
+        margin: 0 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background 0.3s ease;
+    }
+
+        .actions button:first-child {
+            background: #27ae60;
+            color: #fff;
+        }
+
+            .actions button:first-child:hover {
+                background: #219150;
+            }
+
+        .actions button:last-child {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+            .actions button:last-child:hover {
+                background: #c0392b;
+            }

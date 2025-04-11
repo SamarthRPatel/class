@@ -1,0 +1,422 @@
+﻿<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Your Property</title>
+    <link rel="stylesheet" href="sell.css">
+    <script defer src="sell.js"></script>
+</head>
+<body>-->
+<!-- Header -->
+<!--<header>
+    <i class="fas fa-user-circle profile-icon"></i>
+    <h1>Sell Your Property</h1>
+    <i class="fas fa-home home-icon"></i>
+</header>-->
+<!-- Sell Property Form -->
+<!--<div class="sell-container">
+    <h2>List Your Property</h2>
+    <form action="#" method="POST">
+        <label for="property-title">Property Title:</label>
+        <input type="text" id="property-title" name="property-title" placeholder="Enter property title" required>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" placeholder="Enter property location" required>
+
+        <label for="price">Price ($):</label>
+        <input type="number" id="price" name="price" placeholder="Enter price" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" placeholder="Describe your property" required></textarea>
+
+        <label for="image">Upload Images:</label>
+        <input type="file" id="image" name="image" accept="image/*" multiple required>
+
+        <button type="submit" class="sell-btn">Submit Listing</button>
+    </form>
+</div>-->
+<!-- Navigation -->
+<!--<div class="navigation">
+        <button class="nav-btn left" onclick="window.location.href='buy.html'">Buy</button>
+        <button class="nav-btn right" onclick="window.location.href='rent.html'">Rent</button>
+    </div>
+
+</body>
+</html>-->
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Your Property</title>
+    <link rel="stylesheet" href="sell.css">
+</head>
+<body>-->
+<!-- Header -->
+<!--<header>
+    <i class="fas fa-user-circle profile-icon"></i>
+    <h1>Sell Your Property</h1>
+    <i class="fas fa-home home-icon"></i>
+</header>-->
+<!-- Sell Property Form -->
+<!--<div class="sell-container">
+    <h2>List Your Property</h2>
+    <form id="sell-form">
+        <label for="property-title">Property Title:</label>
+        <input type="text" id="property-title" name="property-title" placeholder="Enter property title" required>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" placeholder="Enter property location" required>
+
+        <label for="price">Price ($):</label>
+        <input type="number" id="price" name="price" placeholder="Enter price" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" placeholder="Describe your property" required></textarea>
+
+        <label for="image">Image URL:</label>
+        <input type="url" id="image" name="image" placeholder="Enter image URL" required>
+
+        <button type="submit" class="sell-btn">Submit Listing</button>
+    </form>
+</div>-->
+<!-- Navigation -->
+<!--<div class="navigation">
+        <button class="nav-btn left" onclick="window.location.href='buy.html'">Buy</button>
+        <button class="nav-btn right" onclick="window.location.href='rent.html'">Rent</button>
+    </div>
+
+    <script>
+        document.getElementById('sell-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const property = {
+                title: document.getElementById('property-title').value,
+                location: document.getElementById('location').value,
+                price: document.getElementById('price').value,
+                description: document.getElementById('description').value,
+                image: document.getElementById('image').value
+            };
+
+            let listings = JSON.parse(localStorage.getItem('listings')) || [];
+            listings.push(property);
+            localStorage.setItem('listings', JSON.stringify(listings));
+
+            alert("Property listed successfully!");
+            window.location.href = "buy.html";
+        });
+    </script>
+
+</body>
+</html>-->
+<!--<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Your Property</title>
+    <link rel="stylesheet" href="sell.css">
+</head>
+
+<body>-->
+<!-- Header -->
+<!--<header>
+    <i class="fas fa-user-circle profile-icon"></i>
+    <h1>Sell Your Property</h1>
+    <i class="fas fa-home home-icon"></i>
+</header>-->
+<!-- Sell Property Form -->
+<!--<div class="sell-container">
+    <h2>List Your Property</h2>
+    <form id="sell-form">
+        <label for="property-title">Property Title:</label>
+        <input type="text" id="property-title" name="property-title" placeholder="Enter property title" required>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" placeholder="Enter property location" required>
+
+        <label for="price">Price ($):</label>
+        <input type="number" id="price" name="price" placeholder="Enter price" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" placeholder="Describe your property" required></textarea>
+
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+
+        <button type="submit" class="sell-btn">Submit Listing</button>
+    </form>
+</div>-->
+<!-- Navigation -->
+<!--<div class="navigation">
+        <button class="nav-btn left" onclick="window.location.href='buy.html'">Buy</button>
+        <button class="nav-btn right" onclick="window.location.href='rent.html'">Rent</button>
+    </div>
+
+    <script>
+        document.getElementById('sell-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const fileInput = document.getElementById('image');
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    const base64Image = event.target.result;
+
+                    const property = {
+                        title: document.getElementById('property-title').value,
+                        location: document.getElementById('location').value,
+                        price: document.getElementById('price').value,
+                        description: document.getElementById('description').value,
+                        image: base64Image // Now storing as base64 image
+                    };
+
+                    let listings = JSON.parse(localStorage.getItem('listings')) || [];
+                    listings.push(property);
+                    localStorage.setItem('listings', JSON.stringify(listings));
+
+                    alert("Property listed successfully!");
+                    window.location.href = "buy.html";
+                };
+                reader.readAsDataURL(file);
+            } else {
+                alert("Please upload an image!");
+            }
+        });
+    </script>
+
+</body>
+
+</html>-->
+<!--<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Your Property</title>
+    <link rel="stylesheet" href="sell.css">
+</head>
+
+<body>-->
+<!-- Header -->
+<!--<header>
+    <i class="fas fa-user-circle profile-icon"></i>
+    <h1>Sell Your Property</h1>
+    <i class="fas fa-home home-icon"></i>
+</header>-->
+<!-- Sell Property Form -->
+<!--<div class="sell-container">
+    <h2>List Your Property</h2>
+    <form id="sell-form">
+        <label for="property-title">Property Title:</label>
+        <input type="text" id="property-title" name="property-title" placeholder="Enter property title" required>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" placeholder="Enter property location" required>
+
+        <label for="price">Price ($):</label>
+        <input type="number" id="price" name="price" placeholder="Enter price" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" placeholder="Describe your property" required></textarea>
+
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+
+        <button type="submit" class="sell-btn">Submit Listing</button>
+    </form>
+</div>-->
+<!-- Navigation -->
+<!--<div class="navigation">
+        <button class="nav-btn left" onclick="window.location.href='buy.html'">Buy</button>
+        <button class="nav-btn right" onclick="window.location.href='rent.html'">Rent</button>
+    </div>
+
+    <script>
+        document.getElementById('sell-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const fileInput = document.getElementById('image');
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    const base64Image = event.target.result;
+
+                    const property = {
+                        title: document.getElementById('property-title').value,
+                        location: document.getElementById('location').value,
+                        price: document.getElementById('price').value,
+                        description: document.getElementById('description').value,
+                        image: base64Image // Store image as base64
+                    };
+
+                    // 👉 Save to "pendingListings" for Admin approval
+                    let pendingListings = JSON.parse(localStorage.getItem('pendingListings')) || [];
+                    pendingListings.push(property);
+                    localStorage.setItem('pendingListings', JSON.stringify(pendingListings));
+
+                    alert("Property submitted for Admin approval!");
+                    window.location.href = "admin.html"; // Direct to Admin or stay on Sell
+                };
+                reader.readAsDataURL(file);
+            } else {
+                alert("Please upload an image!");
+            }
+        });
+    </script>
+
+</body>
+
+</html>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Your Property </title>
+    <link rel="stylesheet" href="sell.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <i class="fas fa-user-circle profile-icon"></i>
+        <h1>Vendez votre propriete ici!</h1>
+        <i class="fas fa-home home-icon"></i>
+    </header>
+
+    <!-- Sell Property Form -->
+    <div class="sell-container">
+        <h2>List Your Property</h2>
+        <form id="sell-form">
+            <label for="property-title">Property Title:</label>
+            <input type="text" id="property-title" name="property-title" placeholder="Enter property title" required>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter property location" required>
+
+            <label for="price">Price ($):</label>
+            <input type="number" id="price" name="price" placeholder="Enter price" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" placeholder="Describe your property" required></textarea>
+
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+
+            <button type="submit" class="sell-btn">Submit Listing</button>
+        </form>
+    </div>
+
+    <!-- Add this where you want to display rejected properties -->
+    <section class="rejected-section">
+        <h2>Rejected Listings</h2>
+        <div id="rejected-listings"></div>
+    </section>
+
+    <script>
+        const rejectedSection = document.getElementById("rejected-listings");
+        const rejectedListings = JSON.parse(localStorage.getItem("rejectedListings")) || [];
+
+        if (rejectedListings.length === 0) {
+            rejectedSection.innerHTML = "<p>No rejected listings found.</p>";
+        } else {
+            rejectedListings.forEach((listing) => {
+                const div = document.createElement("div");
+                div.classList.add("property");
+                div.innerHTML = `
+            <h3>${listing.title}</h3>
+            <p><strong>Location:</strong> ${listing.location}</p>
+            <p><strong>Price:</strong> $${listing.price}</p>
+            <p><strong>Description:</strong> ${listing.description}</p>
+            <img src="${listing.image}" alt="Property Image" style="max-width:200px;">
+            <p style="color:red;"><strong>Reason for Rejection:</strong> ${listing.rejectionReason}</p>
+          `;
+                rejectedSection.appendChild(div);
+            });
+        }
+    </script>
+
+
+    <!-- Navigation -->
+    <div class="navigation">
+        <button class="nav-btn left" onclick="window.location.href='buy.html'">Buy</button>
+        <button class="nav-btn right" onclick="window.location.href='homepage.html'">Home</button>
+        <button class="nav-btn right" onclick="window.location.href='rent.html'">Rent</button>
+    </div>
+
+    <script>
+        document.getElementById('sell-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const fileInput = document.getElementById('image');
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    const base64Image = event.target.result;
+
+                    const property = {
+                        title: document.getElementById('property-title').value,
+                        location: document.getElementById('location').value,
+                        price: document.getElementById('price').value,
+                        description: document.getElementById('description').value,
+                        image: base64Image, // Store image as base64
+                        status: "pending" // New status for approval
+                    };
+
+                    // 👉 Save to "pendingListings" for Admin approval
+                    let pendingListings = JSON.parse(localStorage.getItem('pendingListings')) || [];
+                    pendingListings.push(property);
+                    localStorage.setItem('pendingListings', JSON.stringify(pendingListings));
+
+                    alert("Property submitted for Admin approval! Redirecting to Admin page...");
+                    window.location.href = "Admi.html"; // Redirect to Admin page
+                };
+                reader.readAsDataURL(file);
+            } else {
+                alert("Please upload an image!");
+            }
+        });
+    </script>
+
+    <script>
+        const rejectedListings = JSON.parse(localStorage.getItem('rejectedListings')) || [];
+        if (rejectedListings.length > 0) {
+            rejectedListings.forEach(listing => {
+                alert(`❌ Your property "${listing.title}" was rejected by the admin.`);
+            });
+            // Optionally clear it after showing once
+            localStorage.removeItem('rejectedListings');
+        }
+    </script>
+
+
+</body>
+
+</html>

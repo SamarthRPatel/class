@@ -1,0 +1,133 @@
+﻿<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Seller</title>
+    <link rel="stylesheet" href="contact_seller.css">
+    <script defer src="contact_seller.js"></script>
+</head>
+<body>-->
+<!-- Header -->
+<!--<header>
+    <h1>Contact Seller</h1>
+    <button class="back-btn" onclick="window.history.back()">⬅ Back</button>
+</header>-->
+<!-- Contact Form -->
+<!--<div class="contact-container">
+        <h2>Get in Touch with the Seller</h2>
+        <form id="contact-form">
+            <label for="property-name">Property Name:</label>
+            <input type="text" id="property-name" name="property-name" required>
+
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Your Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Enter your message here..." required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+</body>
+</html>-->
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Seller</title>
+    <link rel="stylesheet" href="contact_seller.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Contact Seller</h1>
+        <button class="back-btn" onclick="window.history.back()">⬅ Back</button>
+    </header>
+
+    <!-- Contact Form -->
+    <div class="contact-container">
+        <h2>Get in Touch with the Seller</h2>
+        <form id="contact-form">
+            <label for="property-name">Property Name:</label>
+            <input type="text" id="property-name" name="property-name" required>
+
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Your Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Enter your message here..." required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+
+    <script>
+        // ✅ Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBowgieHiJRnWQKhT78SUj1xzOSkWRfLGE",
+            authDomain: "real-estate-716f5.firebaseapp.com",
+            databaseURL: "https://real-estate-716f5-default-rtdb.firebaseio.com",
+            projectId: "real-estate-716f5",
+            storageBucket: "real-estate-716f5.firebasestorage.app",
+            messagingSenderId: "20078260385",
+            appId: "1:20078260385:web:a27679227f763ce66cc0e0",
+            measurementId: "G-3378ED1K58"
+        };
+
+        // ✅ Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+
+        // ✅ Handle Form Submission
+        document.getElementById("contact-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const propertyName = document.getElementById("property-name").value;
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const message = document.getElementById("message").value;
+
+            // Save to Firebase under "inquiries/{propertyName}/"
+            const inquiryRef = db.ref("inquiries/" + propertyName).push();
+            inquiryRef.set({
+                name,
+                email,
+                phone,
+                message,
+                timestamp: new Date().toISOString()
+            });
+
+            alert("Your message has been sent to the seller!");
+            document.getElementById("contact-form").reset();
+        });
+    </script>
+</body>
+</html>

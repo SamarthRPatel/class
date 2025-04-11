@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | DreamHome</title>
+    <link rel="stylesheet" href="login.css">
+    <script type="module" defer src="login.js"></script>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Login to Your Account</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <span class="toggle-password" onclick="togglePassword()">👁</span>
+                </div>
+            </div>
+
+            <button type="submit" class="login-btn">Login</button>
+            <p id="error-message" class="error-message"></p> <!-- Error Message -->
+        </form>
+
+        <p class="register-link">Don't have an account? <a href="index.html">Sign up</a></p>
+        <p class="forgot-password"><a href="forgotpassword.html">Forgot Password?</a></p>
+    </div>
+
+    <script type="module">
+        // Firebase Import
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+
+        // Firebase Config
+        const firebaseConfig = {
+            apiKey: "AIzaSyBowgieHiJRnWQKhT78SUj1xzOSkWRfLGE",
+            authDomain: "real-estate-716f5.firebaseapp.com",
+            projectId: "real-estate-716f5",
+            storageBucket: "real-estate-716f5.appspot.com",
+            messagingSenderId: "20078260385",
+            appId: "1:20078260385:web:a27679227f763ce66cc0e0",
+            measurementId: "G-3378ED1K58"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Login Function
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const errorMessage = document.getElementById("error-message");
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Login Successful
+                    alert("Login successful! Redirecting to dashboard...");
+                    window.location.href = "dashboard.html"; // Redirect to dashboard
+                })
+                .catch((error) => {
+                    errorMessage.textContent = "Invalid email or password. Try again.";
+                    errorMessage.style.color = "red";
+                });
+        });
+
+        // Toggle Password Visibility
+        function togglePassword() {
+            const passwordField = document.getElementById("password");
+            passwordField.type = passwordField.type === "password" ? "text" : "password";
+        }
+    </script>
+
+</body>
+</html>
